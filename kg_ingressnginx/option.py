@@ -17,10 +17,6 @@ class IngressNGINXOptions(Options):
           - github commit
           - str
           - ```ingress-nginx-<version>```
-        * - config |rarr| ingressnginx_conf
-          - ingressnginx.conf file
-          - str, :class:`kubragen.configfile.ConfigFile`
-          - :class:`kg_ingressnginx.Ingress NGINXConfigFile`
         * - config |rarr| provider_override
           - force provider, otherwise detect using the current :class:`kubragen.provider.Provider`
           - str

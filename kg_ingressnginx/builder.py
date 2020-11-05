@@ -37,12 +37,6 @@ class IngressNGINXBuilder(Builder):
         * - BUILDITEM_INGRESS
           - Ingress
 
-    .. list-table::
-        :header-rows: 1
-
-        * - object name
-          - description
-          - default value
     """
     options: IngressNGINXOptions
     # _namespace: str
