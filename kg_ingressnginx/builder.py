@@ -45,9 +45,9 @@ class IngressNGINXBuilder(Builder):
 
     SOURCE_NAME = 'kg_ingressnginx'
 
-    BUILD_INGRESS: TBuild = 'ingress'
+    BUILD_INGRESS = TBuild('ingress')
 
-    BUILDITEM_INGRESS: TBuild = 'ingress'
+    BUILDITEM_INGRESS = TBuildItem('ingress')
 
     def __init__(self, kubragen: KubraGen, options: Optional[IngressNGINXOptions] = None):
         super().__init__(kubragen)
@@ -112,6 +112,8 @@ class IngressNGINXBuilder(Builder):
 
     def internal_build_ingress(self) -> List[ObjectItem]:
         self._checkdownloaded()
-        # TODO: patch names and namespaces
-        ret = self._downloadedfiles['deploy.yaml']
+        ret = []
+        if self._downloadedfiles is not None:
+            # TODO: patch names and namespaces
+            ret = self._downloadedfiles['deploy.yaml']
         return ret
